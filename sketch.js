@@ -1,15 +1,16 @@
 /*******************************************************************************************************************
-      Moody
-    by Scott Kildall
+     Complex State Machine 
+    by Kiana Signey
  
   Color Palette Values:
 
-  Black: #031927
-  Turquoise: #3ED8D2
-  Canary: #FFF689
-  Sizzling Red: #F2545B
-  Pale Purple: #E9D6EC
-
+  Pink #d81159 216, 17, 89 
+  Yellow #ffbc42 255, 188, 66
+  Green #679436 103, 148, 54
+  Blue #0496ff  4, 150, 255
+  Dark blue #006ba6 0, 107, 166
+  Purple #4e148c 78, 20, 140 
+  White#FFFFFF 255, 255, 252
     Uses the p5.ComplexStateMachine library. Check the README.md + source code documentation
     The index.html needs to include the line:  <script src="p5.complexStateManager.js"></script>
 *********************************************************************************************************************/
@@ -19,7 +20,7 @@ var clickablesManager;             // our clickables manager
 var clickables;                    // an array of clickable objects
 
 var currentStateName = "";
-var moodImage;
+var StatusImage;
 
 var bkColor = '#031927';
 var textColor = '#E9D6EC';
@@ -88,7 +89,7 @@ clickableButtonPressed = function() {
 
 // this is a callback, which we use to set our display image
 function setImage(imageFilename) {
-  moodImage = loadImage(imageFilename);
+  StatusImage = loadImage(imageFilename);
 } 
 
 // this is a callback, which we can use for different effects
@@ -112,8 +113,8 @@ function drawBackground() {
 }
 
 function drawImage() {
-  if( moodImage !== undefined ) {
-    image(moodImage, width/2, height/2);
+  if( StatusImage !== undefined ) {
+    image(StatusImage, width/2, height/2);
   }  
 }
 
