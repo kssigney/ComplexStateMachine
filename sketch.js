@@ -23,7 +23,7 @@ var currentStateName = "";
 var StatusImage;
 
 var bkColor = '#031927';
-var textColor = '#E9D6EC';
+var textColor = '#588157';
 
 var buttonFont;
 
@@ -32,6 +32,7 @@ function preload() {
   complexStateMachine = new ComplexStateMachine("data/interactionTable.csv", "data/clickableLayout.csv");
 
   buttonFont = loadFont("AtariClassic-ExtraSmooth.ttf");
+
 }
 
 // Setup code goes here
@@ -72,15 +73,15 @@ function setupClickables() {
 
 // tint when mouse is over
 clickableButtonHover = function () {
-  this.color = "#F2545B";
+  this.color = "#588157";
   this.noTint = false;
-  this.tint = "#FF0000";
+  this.tint = "#588157";
 }
 
 // color a light gray if off
 clickableButtonOnOutside = function () {
   // backto our gray color
-  this.color = "#E9D6EC";
+  this.color = "#3A5A40";
 }
 
 clickableButtonPressed = function() {
@@ -101,7 +102,7 @@ function stateChanged(newStateName) {
 
 //==== KEYPRESSED ====/
 function mousePressed() {
-  // if( currentStateName === "Splash" ) {
+  // if( currentStateName === "Instructions" ) {
   //   complexStateMachine.newState("Instructions");
   // }
 }
